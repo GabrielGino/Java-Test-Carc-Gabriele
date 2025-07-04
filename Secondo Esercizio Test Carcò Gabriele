@@ -1,0 +1,71 @@
+public class main {
+
+	public static void main(String[] args) {
+		
+		Persona[] p = new Persona[3];
+		
+        p[0] = new Studente("Gabriele", "Rossi", "GR2908");
+        p[1] = new Professore("Federico", "Verdi", "Italiano");
+        p[2] = new Persona("Marco", "Rossi");
+        
+        int lenght = p.length;
+
+        for (int i = 0; i < lenght; i++) {
+            p[i].presentati();
+        }
+
+	}
+
+}
+
+
+- - - - - -- - - - -  - -
+
+class Studente extends Persona {
+	
+    private String matricola;
+
+    public Studente(String nome, String cognome, String matricola) {
+        super(nome, cognome);
+        this.matricola = matricola;
+    }
+
+    @Override
+    public void presentati() {
+        System.out.println("Sono lo studente " + nome + " " + cognome + ", matricola: " + matricola);
+    }
+}
+
+- - - - - - - - - -  - - - - - -
+
+public class Persona {
+	
+    protected String nome;
+    protected String cognome;
+
+    public Persona(String nome, String cognome) {
+        this.nome = nome;
+        this.cognome = cognome;
+    }
+
+    public void presentati() {
+        System.out.println("Ciao, sono " + nome + " " + cognome);
+    }
+}
+
+- - - - - - - - - - - -  -- -
+
+class Professore extends Persona {
+	
+    private String materia;
+
+    public Professore(String nome, String cognome, String materia) {
+        super(nome, cognome);
+        this.materia = materia;
+    }
+
+    @Override
+    public void presentati() {
+        System.out.println("Sono il prof. " + nome + " " + cognome + ", insegno " + materia);
+    }
+}
