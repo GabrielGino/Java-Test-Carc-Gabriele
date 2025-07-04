@@ -1,0 +1,33 @@
+public class main {
+
+	public static void main(String[] args) {
+		
+		Studente s1 = new Studente("Gabriele", "Rossi", 2005);
+		Studente s2 = new Studente("Mario", "Bianchi", 2004);
+		
+		s1.stampaScheda();
+		s2.stampaScheda();
+
+	}
+
+}
+
+- - - - - - - - -- - - - -  --  - -
+
+public class Studente {
+    
+    private String nome;
+    private String cognome;
+    private int annoNascita;
+
+    public Studente(String nome, String cognome, int annoNascita) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.annoNascita = annoNascita;
+    }
+
+    public void stampaScheda() {
+        System.out.println(nome + " " + cognome + ", nato nel " + annoNascita);
+    }
+
+}
